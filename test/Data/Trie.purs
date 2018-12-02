@@ -10,7 +10,7 @@ import Data.Trie as Trie
 import Test.Spec (Spec, describe, it)
 import Test.Spec.Assertions (shouldEqual)
 
-spec :: forall r. Spec r Unit
+spec :: Spec Unit
 spec = describe "Trie" do
   describe "show" do
     it "empty" do
