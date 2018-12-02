@@ -17,7 +17,6 @@ import Data.Foldable (class Foldable, foldl, foldr)
 import Data.Map (Map)
 import Data.Map as M
 import Data.Maybe (fromMaybe, maybe')
-import Data.Monoid (class Monoid)
 import Data.Newtype (class Newtype, unwrap)
 import Data.Tuple (Tuple(..))
 
@@ -51,7 +50,7 @@ showMap :: Map String Trie' -> String
 showMap m = "(fromFoldable " <> showArray (toAscArray m) <> ")"
   where
   toAscArray :: forall k v. Map k v -> Array (Tuple k v)
-  toAscArray = M.toAscUnfoldable
+  toAscArray = M.toUnfoldable
 
 showTrie' :: Trie' -> String
 showTrie' tr =
